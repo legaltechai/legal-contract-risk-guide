@@ -1,0 +1,1655 @@
+[
+   {
+      "bloque_contractual":"BLOQUE 1 · IDENTIFICACIÓN DE LAS PARTES",
+      "riesgos":[
+         {
+            "id_chunk":"1.1",
+            "descripcion_riesgo":"Ausencia de datos identificativos completos de una de las partes contratantes, lo que impide una identificación plena y verificable del sujeto obligado en el contrato.",
+            "criterios_activacion":[
+               "En el bloque de identificación del cliente falta al menos uno de estos datos esenciales: razón social completa, NIF o domicilio completo.",
+               "La omisión está presente en el propio texto del contrato (no se activa por falta de adjuntos externos)."
+            ],
+            "no_activar_si":[
+               "Los datos existen en el contrato aunque estén ubicados fuera del bloque principal de identificación.",
+               "El contrato contiene todos los datos esenciales en forma completa aunque haya variaciones formales menores."
+            ],
+            "impacto":{
+               "juridico":"Incertidumbre jurídica sobre la identidad del obligado contractual frente al prestador.",
+               "economico":"Imposibilidad de emitir facturación válida",
+               "operativo":"Dificultades para comunicaciones formales y reclamaciones"
+            },
+            "severidad_base":"HIGH"
+         },
+         {
+            "id_chunk":"1.2",
+            "descripcion_riesgo":"Falta del número de identificación fiscal del cliente, impidiendo su correcta identificación tributaria dentro del contrato.",
+            "criterios_activacion":[
+               "El contrato no contiene ningún número de identificación fiscal del cliente.",
+               "El campo de NIF aparece vacío, con texto no equivalente a un NIF o claramente incompleto."
+            ],
+            "no_activar_si":[
+               "El NIF aparece completo en cualquier apartado del contrato, aunque su ubicación no sea la prevista.",
+               "El NIF está presente y completo, aunque su formato incluya espacios o guiones."
+            ],
+            "impacto":{
+               "juridico":"Imposibilidad técnica de cumplir con las obligaciones legales de facturación del prestador.",
+               "economico":"Imposibilidad de emitir facturas válidas",
+               "operativo":null
+            },
+            "severidad_base":"HIGH"
+         },
+         {
+            "id_chunk":"1.3",
+            "descripcion_riesgo":"Uso de una denominación del cliente que no permite identificar de forma inequívoca a la persona jurídica obligada.",
+            "criterios_activacion":[
+               "La denominación del cliente se expresa exclusivamente mediante nombre comercial, siglas sin desarrollo o denominación genérica.",
+               "No aparece en el contrato la razón social registral completa."
+            ],
+            "no_activar_si":[
+               "La razón social completa aparece en cualquier parte del contrato.",
+               "Las siglas se encuentran desarrolladas en algún punto del documento."
+            ],
+            "impacto":{
+               "juridico":"Incertidumbre sobre quién es el sujeto jurídicamente obligado frente al prestador.",
+               "economico":null,
+               "operativo":"Necesidad de aclaraciones posteriores"
+            },
+            "severidad_base":"MID"
+         },
+         {
+            "id_chunk":"1.4",
+            "descripcion_riesgo":"Falta de domicilio completo del cliente, impidiendo una localización formal adecuada para notificaciones.",
+            "criterios_activacion":[
+               "El contrato no incluye un domicilio del cliente que contenga, como mínimo: vía pública + número o referencia equivalente + localidad.",
+               "El texto solo incluye datos parciales que no permiten identificar un punto de notificación."
+            ],
+            "no_activar_si":[
+               "El domicilio completo aparece en cualquier otro apartado del contrato.",
+               "La dirección está completa aunque falten detalles no esenciales (planta, puerta, escalera)."
+            ],
+            "impacto":{
+               "juridico":"Dificultad para realizar notificaciones formales válidas al cliente.",
+               "economico":null,
+               "operativo":"Necesidad de localizar el domicilio por otros medios"
+            },
+            "severidad_base":"LOW"
+         },
+         {
+            "id_chunk":"1.5",
+            "descripcion_riesgo":"El contrato ha sido firmado por una persona cuya capacidad representativa no está acreditada documentalmente.",
+            "criterios_activacion":[
+               "El firmante no coincide con un cargo con facultades legales evidentes (administrador, apoderado inscrito, etc.).",
+               "El contrato no incorpora ni referencia ningún documento de acreditación de poderes.",
+               "No existe ninguna declaración expresa sobre la condición representativa del firmante."
+            ],
+            "no_activar_si":[
+               "El contrato identifica al firmante como administrador u órgano con facultad legal suficiente.",
+               "Existe referencia expresa a poderes, aunque no se adjunten físicamente."
+            ],
+            "impacto":{
+               "juridico":"Posible cuestionamiento de la validez del consentimiento contractual del cliente.",
+               "economico":null,
+               "operativo":"Riesgo de impugnación posterior del contrato"
+            },
+            "severidad_base":"MID"
+         }
+      ]
+   },
+   {
+      "bloque_contractual":"BLOQUE 2 · OBJETO DEL CONTRATO",
+      "riesgos":[
+         {
+            "id_chunk":"2.1",
+            "descripcion_riesgo":"Mezcla indistinta de la descripción del objeto general con el detalle operativo de ejecución, dificultando la delimitación clara de la prestación principal.",
+            "criterios_activacion":[
+               "La cláusula de objeto incluye simultáneamente descripciones generales de la prestación y elementos operativos específicos propios de ejecución.",
+               "No existe separación formal o estructural entre la definición del objeto y el detalle operativo."
+            ],
+            "no_activar_si":[
+               "El contrato separa expresamente objeto y ejecución en apartados distintos, aunque existan referencias cruzadas.",
+               "La cláusula contiene ejemplos operativos aislados pero no integrados como parte sustantiva del objeto."
+            ],
+            "impacto":{
+               "juridico":"Posibles interpretaciones divergentes sobre qué constituye la prestación principal. Incertidumbre sobre jerarquía de cláusulas en caso de contradicción.",
+               "economico":null,
+               "operativo":"Necesidad de clarificación interna del alcance del objeto (tiempo y recursos)"
+            },
+            "severidad_base":"LOW"
+         },
+         {
+            "id_chunk":"2.2",
+            "descripcion_riesgo":"Definición del objeto mediante remisión a documentos externos no incorporados, impidiendo verificación efectiva de obligaciones por el prestador.",
+            "criterios_activacion":[
+               "El contrato referencia uno o más documentos externos que contienen parte del objeto.",
+               "Dichos documentos no están incorporados físicamente ni anexados ni reproducidos.",
+               "No se indica versión aplicable o no existe constancia de recepción por el prestador."
+            ],
+            "no_activar_si":[
+               "El documento externo está anexado, incorporado o reproducido, aunque sea parcialmente.",
+               "Existe versión identificada y constancia de recepción por cualquier medio documental."
+            ],
+            "impacto":{
+               "juridico":"Asunción de obligaciones no verificadas ni aceptadas expresamente en el momento de la firma.",
+               "economico":"Posibles prestaciones adicionales no pactadas (€)",
+               "operativo":"Riesgo de aplicación unilateral de versiones posteriores (tiempo y recursos)"
+            },
+            "severidad_base":"HIGH"
+         },
+         {
+            "id_chunk":"2.3",
+            "descripcion_riesgo":"Descripción del objeto en términos excesivamente generales, sin delimitar tareas, metodología o finalidad concreta.",
+            "criterios_activacion":[
+               "La cláusula utiliza términos genéricos o amplios (ej.: ""servicios de consultoría"", ""asistencia técnica"", ""soporte"").",
+               "No aparecen tareas, metodología, limitaciones, entregables o finalidad concreta en ningún punto del objeto."
+            ],
+            "no_activar_si":[
+               "El detalle operativo está en otra cláusula formalmente vinculada al objeto (p. ej., alcance, anexos técnicos).",
+               "Existen elementos mínimos que delimitan finalidad o alcance, aunque no sean exhaustivos."
+            ],
+            "impacto":{
+               "juridico":"Posibilidad de que el cliente exija trabajos adicionales interpretando extensivamente la denominación genérica.",
+               "economico":null,
+               "operativo":"Necesidad de delimitar internamente alcance de prestación (tiempo y recursos)"
+            },
+            "severidad_base":"MID"
+         },
+         {
+            "id_chunk":"2.4",
+            "descripcion_riesgo":"Inconsistencia entre la descripción general del objeto y la especificación en el cuadro de precios.",
+            "criterios_activacion":[
+               "Existen servicios mencionados en la cláusula de objeto que no aparecen en el cuadro de precios.",
+               "Existen servicios en el cuadro de precios que no están mencionados en la cláusula de objeto.",
+               "No existe ninguna cláusula que establezca criterio de prevalencia entre ambos documentos."
+            ],
+            "no_activar_si":[
+               "Las diferencias son puramente terminológicas pero coinciden funcionalmente.",
+               "Se establece expresamente qué documento prevalece en caso de contradicción."
+            ],
+            "impacto":{
+               "juridico":"Disputas interpretativas sobre qué servicios están efectivamente incluidos en la prestación.",
+               "economico":null,
+               "operativo":"Necesidad de aclarar alcance antes de ejecutar (tiempo y recursos)"
+            },
+            "severidad_base":"MID"
+         },
+         {
+            "id_chunk":"2.5",
+            "descripcion_riesgo":"Objeto definitivo sujeto a replanteo o validación posterior del cliente, sin plazo ni determinación concreta.",
+            "criterios_activacion":[
+               "La cláusula contiene referencias a unidades, volúmenes, entregables o alcance marcados como ""estimados"", ""a determinar"" o equivalentes.",
+               "No se establece ningún plazo, hito, condición o procedimiento para su validación definitiva por el cliente."
+            ],
+            "no_activar_si":[
+               "El contrato fija un proceso de validación con plazo o criterios explícitos.",
+               "Las referencias a estimaciones se acompañan de límites máximos o mínimos operativos."
+            ],
+            "impacto":{
+               "juridico":"Imposibilidad de iniciar la prestación hasta validación del cliente y falta de certeza sobre alcance definitivo.",
+               "economico":null,
+               "operativo":"Retrasos en la ejecución (tiempo y recursos)"
+            },
+            "severidad_base":"MID"
+         },
+         {
+            "id_chunk":"2.6",
+            "descripcion_riesgo":"Ausencia de especificación precisa del lugar donde se ejecutará la prestación del servicio.",
+            "criterios_activacion":[
+               "La cláusula de lugar de prestación no incluye dirección concreta, instalación específica o localización inequívoca.",
+               "El texto se limita a referencias genéricas como ""en las instalaciones del cliente"", municipio o zona geográfica sin precisiones."
+            ],
+            "no_activar_si":[
+               "La ubicación detallada aparece en otro apartado del contrato o en un anexo incorporado.",
+               "Existe referencia a un lugar concreto aunque no incluya elementos accesorios (planta, edificio secundario, etc.)."
+            ],
+            "impacto":{
+               "juridico":"Incertidumbre sobre la localización exacta de la prestación.",
+               "economico":null,
+               "operativo":"Imposibilidad de verificar previamente condiciones del lugar (tiempo y recursos)"
+            },
+            "severidad_base":"LOW"
+         }
+      ]
+   },
+   {
+      "bloque_contractual":"BLOQUE 3 · ALCANCE DEL SERVICIO",
+      "riesgos":[
+         {
+            "id_chunk":"3.1",
+            "descripcion_riesgo":"Obligación contractual de realizar trabajos no especificados bajo conceptos genéricos.",
+            "criterios_activacion":[
+               "La cláusula incluye expresiones abiertas como ""cuantas actuaciones sean necesarias"", ""trabajos para el buen fin"", o equivalentes.",
+               "No se describen tareas concretas, entregables o límites del alcance.",
+               "No aparece regulación de remuneración adicional asociada a dichos trabajos indeterminados."
+            ],
+            "no_activar_si":[
+               "Las expresiones abiertas se acompañan de un listado claro de tareas o límites operativos.",
+               "Existe un mecanismo contractual específico para remunerar trabajos adicionales."
+            ],
+            "impacto":{
+               "juridico":"Posibilidad de que el cliente exija trabajos no especificados inicialmente; dificultad para rechazar solicitudes adicionales; incertidumbre sobre el alcance definitivo.",
+               "economico":"Ejecución de trabajos no previstos (€)",
+               "operativo":"Planificación y recursos comprometidos sin previsión (tiempo y recursos)"
+            },
+            "severidad_base":"HIGH"
+         },
+         {
+            "id_chunk":"3.2",
+            "descripcion_riesgo":"Falta de especificación de servicios o tareas expresamente excluidos del alcance.",
+            "criterios_activacion":[
+               "La cláusula describe tareas incluidas en la prestación.",
+               "No existe ningún apartado o referencia donde se indiquen servicios, tareas o actividades excluidas del alcance."
+            ],
+            "no_activar_si":[
+               "El contrato incluye exclusiones en otro apartado o anexo, aunque no estén bajo el título principal del alcance.",
+               "Existen exclusiones implícitas derivadas de límites claros en la descripción del alcance (p. ej., ámbito técnico definido)."
+            ],
+            "impacto":{
+               "juridico":"Posibilidad de interpretación extensiva del alcance por parte del cliente; necesidad de negociación caso por caso.",
+               "economico":null,
+               "operativo":"Gestión de solicitudes adicionales no previstas (tiempo y recursos)"
+            },
+            "severidad_base":"MID"
+         },
+         {
+            "id_chunk":"3.3",
+            "descripcion_riesgo":"Determinación unilateral por el cliente de las unidades ejecutadas a remunerar.",
+            "criterios_activacion":[
+               "El contrato establece que la medición de unidades la realiza exclusivamente el cliente.",
+               "No existe mención a participación, revisión o validación por parte del prestador.",
+               "No se regula procedimiento contradictorio ni mecanismo de resolución de discrepancias."
+            ],
+            "no_activar_si":[
+               "La medición es realizada por el cliente pero se prevé participación del prestador o procedimiento contradictorio.",
+               "El contrato incorpora un mecanismo formal para gestionar discrepancias (peritaje, revisión conjunta, etc.)."
+            ],
+            "impacto":{
+               "juridico":"Minoración unilateral de cantidades certificadas y facturables; traslado íntegro del riesgo de discrepancias técnicas al prestador; reducción de ingresos sin incumplimiento objetivo.",
+               "economico":"Reducción de facturación (€)",
+               "operativo":"Incremento de litigiosidad y seguimiento de mediciones (tiempo y recursos)"
+            },
+            "severidad_base":"HIGH"
+         },
+         {
+            "id_chunk":"3.4",
+            "descripcion_riesgo":"Falta de criterios objetivos para determinar la conformidad del resultado.",
+            "criterios_activacion":[
+               "La cláusula no describe el estado final exigible del servicio.",
+               "No se establecen tolerancias, métricas, parámetros o criterios objetivos de aceptación/rechazo."
+            ],
+            "no_activar_si":[
+               "Los criterios se encuentran en un anexo vinculado o documento técnico incorporado.",
+               "Existen descripciones mínimas que permitan determinar conformidad aunque no sean exhaustivas."
+            ],
+            "impacto":{
+               "juridico":"Posibilidad de rechazo basado en apreciación subjetiva del cliente; necesidad de repetir trabajos; incertidumbre sobre conformidad.",
+               "economico":null,
+               "operativo":"Trabajos repetidos por criterios subjetivos (tiempo y recursos)"
+            },
+            "severidad_base":"MID"
+         },
+         {
+            "id_chunk":"3.5",
+            "descripcion_riesgo":"Ausencia de especificación de limitaciones geográficas, temporales o técnicas del servicio.",
+            "criterios_activacion":[
+               "La cláusula no contiene ninguna limitación geográfica, temporal, técnica o de acceso relevante.",
+               "No se menciona ningún condicionante del entorno donde se prestará el servicio (horarios, restricciones, condiciones ambientales, etc.)."
+            ],
+            "no_activar_si":[
+               "Las limitaciones aparecen en otro apartado del contrato o en anexo técnico.",
+               "Existen restricciones mínimas aunque no sean exhaustivas."
+            ],
+            "impacto":{
+               "juridico":"Posibilidad de que el cliente exija prestación en condiciones no previstas; imposibilidad de verificar condicionantes previos.",
+               "economico":null,
+               "operativo":"Ejecución en condiciones no verificadas (tiempo y recursos)"
+            },
+            "severidad_base":"LOW"
+         },
+         {
+            "id_chunk":"3.6",
+            "descripcion_riesgo":"Ausencia de regulación del procedimiento de validación y conformidad del servicio.",
+            "criterios_activacion":[
+               "No se identifica quién es el responsable de validar la conformidad del servicio.",
+               "No se establece un plazo máximo para emitir la conformidad o rechazo.",
+               "No se recogen causas objetivas que permitan rechazar el servicio.",
+               "No se regula qué ocurre si no hay pronunciamiento del cliente (aceptación tácita, silencio, etc.)."
+            ],
+            "no_activar_si":[
+               "El procedimiento está descrito total o parcialmente en otro apartado o anexo.",
+               "Existen criterios mínimos de rechazo o plazos aunque no estén completamente desarrollados."
+            ],
+            "impacto":{
+               "juridico":"Posibilidad de retrasos indefinidos en la emisión de conformidad; imposibilidad de forzar aprobación; impacto sobre pagos condicionados.",
+               "economico":null,
+               "operativo":"Retrasos en ejecución y cobro (tiempo y recursos)"
+            },
+            "severidad_base":"MID"
+         },
+         {
+            "id_chunk":"3.7",
+            "descripcion_riesgo":"Facultad del cliente para modificar unilateralmente el alcance durante la ejecución.",
+            "criterios_activacion":[
+               "La cláusula permite explícitamente la modificación unilateral del alcance por parte del cliente.",
+               "No se establecen límites porcentuales, económicos o materiales para dicha modificación.",
+               "No se regula un procedimiento de negociación o revisión de precios.",
+               "No se reconoce al prestador derecho a rechazar o limitar cambios."
+            ],
+            "no_activar_si":[
+               "Existen límites claros (porcentuales, económicos, alcance máximo).",
+               "Existe procedimiento de revisión de precios o aprobación bilateral."
+            ],
+            "impacto":{
+               "juridico":"Imposibilidad de planificar recursos; riesgo de reducción sin compensación o ampliación con imposición de condiciones; incertidumbre sobre volumen definitivo.",
+               "economico":"Variabilidad de ingresos y costos (€)",
+               "operativo":"Planificación y asignación de recursos comprometida (tiempo y recursos)"
+            },
+            "severidad_base":"HIGH"
+         }
+      ]
+   },
+   {
+      "bloque_contractual":"BLOQUE 4 · DURACIÓN Y VIGENCIA",
+      "riesgos":[
+         {
+            "id_chunk":"4.1",
+            "descripcion_riesgo":"Obligación contractual del prestador de prorrogar si el cliente lo decide, eliminando la voluntariedad del prestador.",
+            "criterios_activacion":[
+               "La cláusula establece que la prórroga depende exclusivamente de la decisión del cliente.",
+               "No aparece ninguna referencia a la aceptación o voluntariedad del prestador."
+            ],
+            "no_activar_si":[
+               "El texto prevé aceptación expresa o tácita por parte del prestador como condición para la prórroga.",
+               "El contrato establece prórroga bilateral o sujeta a acuerdo entre partes."
+            ],
+            "impacto":{
+               "juridico":"Imposibilidad de rechazar la continuidad contractual; pérdida de capacidad negociadora sobre condiciones de la prórroga.",
+               "economico":null,
+               "operativo":"Obligación de continuar prestando sin poder reorganizar recursos (tiempo y recursos)"
+            },
+            "severidad_base":"HIGH"
+         },
+         {
+            "id_chunk":"4.2",
+            "descripcion_riesgo":"Ausencia de determinación de la duración del contrato.",
+            "criterios_activacion":[
+               "No consta un plazo de vigencia determinado.",
+               "No consta una declaración expresa de contrato indefinido.",
+               "No existe ningún criterio objetivo de finalización (hito, entrega, evento, etc.)."
+            ],
+            "no_activar_si":[
+               "El contrato incluye referencia a un hito o condición que determina su finalización.",
+               "Existe declaración explícita de duración indefinida."
+            ],
+            "impacto":{
+               "juridico":"Imposibilidad de planificar recursos y volumen temporal de prestación; incertidumbre sobre fecha de finalización.",
+               "economico":null,
+               "operativo":"Dificultad para planificar recursos a medio/largo plazo (tiempo y recursos)"
+            },
+            "severidad_base":"MID"
+         },
+         {
+            "id_chunk":"4.3",
+            "descripcion_riesgo":"Prórroga automática con plazo de preaviso inferior a un mes, limitando margen de decisión.",
+            "criterios_activacion":[
+               "Existe prórroga automática expresamente prevista.",
+               "El plazo de preaviso para evitar la prórroga es inferior a 30 días naturales."
+            ],
+            "no_activar_si":[
+               "El plazo de preaviso es igual o superior a 30 días.",
+               "El contrato permite desactivar la prórroga mediante aceptación bilateral."
+            ],
+            "impacto":{
+               "juridico":"Plazo limitado para decidir no prorrogar; imposibilidad de reorganizar recursos si se decide no continuar.",
+               "economico":null,
+               "operativo":"Reorganización de recursos limitada por corto plazo de preaviso (tiempo y recursos)"
+            },
+            "severidad_base":"LOW"
+         },
+         {
+            "id_chunk":"4.4",
+            "descripcion_riesgo":"Ausencia de regulación de las condiciones económicas aplicables en caso de prórroga.",
+            "criterios_activacion":[
+               "No se establece mantenimiento del precio para la prórroga.",
+               "No se regula la revisión o actualización del precio.",
+               "No existe ningún criterio para determinar condiciones económicas durante la prórroga."
+            ],
+            "no_activar_si":[
+               "El contrato prevé actualización automática (IPC, fórmula, tarifa, etc.).",
+               "El precio se mantiene explícitamente durante la prórroga."
+            ],
+            "impacto":{
+               "juridico":"Incertidumbre sobre las condiciones económicas aplicables durante la prórroga.",
+               "economico":"Dificultad para determinar precio aplicable (€)",
+               "operativo":null
+            },
+            "severidad_base":"LOW"
+         },
+         {
+            "id_chunk":"4.5",
+            "descripcion_riesgo":"Ausencia de regulación del tratamiento de servicios iniciados al vencer el plazo del contrato.",
+            "criterios_activacion":[
+               "No se regula qué ocurre con los servicios iniciados al vencimiento.",
+               "No se menciona procedimiento de liquidación de trabajos en curso.",
+               "No se regula la facturación de servicios parcialmente ejecutados."
+            ],
+            "no_activar_si":[
+               "El contrato prevé cualquier mecanismo de cierre, liquidación o facturación parcial.",
+               "El tratamiento de servicios en curso aparece en anexos vinculados."
+            ],
+            "impacto":{
+               "juridico":"Incertidumbre sobre la finalización y liquidación de prestaciones parcialmente ejecutadas.",
+               "economico":"Dificultad para facturar servicios parcialmente prestados (€)",
+               "operativo":"Necesidad de definir internamente procedimiento de cierre (tiempo y recursos)"
+            },
+            "severidad_base":"LOW"
+         },
+         {
+            "id_chunk":"4.6",
+            "descripcion_riesgo":"Contrato de duración indefinida sin establecer plazo de preaviso para terminación.",
+            "criterios_activacion":[
+               "El contrato tiene duración indefinida o carece de plazo determinado.",
+               "No aparece ningún plazo mínimo de preaviso para terminación unilateral."
+            ],
+            "no_activar_si":[
+               "El contrato define un plazo de preaviso, aunque sea breve.",
+               "El contrato prevé un mecanismo de terminación asociado a eventos objetivos."
+            ],
+            "impacto":{
+               "juridico":"Ausencia de plazo mínimo garantizado para reorganizar recursos tras comunicación de terminación.",
+               "economico":null,
+               "operativo":"Reorganización de recursos limitada por ausencia de preaviso (tiempo y recursos)"
+            },
+            "severidad_base":"LOW"
+         }
+      ]
+   },
+   {
+      "bloque_contractual":"BLOQUE 5 · PRECIO Y FORMA DE PAGO",
+      "riesgos":[
+         {
+            "id_chunk":"5.1",
+            "descripcion_riesgo":"Facultad contractual del cliente de reducir o aumentar unidades sin garantía de volumen mínimo.",
+            "criterios_activacion":[
+               "La cláusula permite al cliente incrementar las unidades sin límite definido.",
+               "La cláusula permite al cliente reducir las unidades sin establecer un volumen mínimo garantizado.",
+               "Las unidades aparecen calificadas como estimadas o no vinculantes."
+            ],
+            "no_activar_si":[
+               "Existe un volumen mínimo garantizado explícito.",
+               "La variación de unidades está limitada por porcentajes, tramos o topes definidos."
+            ],
+            "impacto":{
+               "juridico":"Indeterminación del ingreso total: riesgo de reducción significativa de unidades sin posibilidad de rechazo.",
+               "economico":"Ingresos variables sin garantía mínima (€)",
+               "operativo":"Planificación de recursos incierta (tiempo y recursos)"
+            },
+            "severidad_base":"HIGH"
+         },
+         {
+            "id_chunk":"5.2",
+            "descripcion_riesgo":"Renuncia contractual expresa a la revisión de precios durante la vigencia del contrato.",
+            "criterios_activacion":[
+               "La cláusula contiene una renuncia expresa a la revisión de precios.",
+               "No existe ninguna excepción contractual para incrementos extraordinarios, revisiones automáticas o circunstancias objetivas.",
+               "No aparece límite temporal que module la renuncia en contratos de larga duración."
+            ],
+            "no_activar_si":[
+               "El contrato prevé mecanismos de actualización (fórmulas, IPC, revisiones pactadas).",
+               "La renuncia está modulada mediante excepciones claras."
+            ],
+            "impacto":{
+               "juridico":"Asunción íntegra de variaciones de costes; imposibilidad contractual de solicitar revisión.",
+               "economico":"Riesgo de asumir costes adicionales (€)",
+               "operativo":"Necesidad de monitorizar costes internamente"
+            },
+            "severidad_base":"MID"
+         },
+         {
+            "id_chunk":"5.3",
+            "descripcion_riesgo":"Inicio del cómputo del plazo de pago desde aprobación del cliente sin plazo máximo para aprobar.",
+            "criterios_activacion":[
+               "El plazo de pago comienza contándose desde la aprobación del cliente.",
+               "La cláusula no fija un plazo máximo para que el cliente apruebe.",
+               "No se regula qué ocurre si el cliente no emite pronunciamiento."
+            ],
+            "no_activar_si":[
+               "El contrato fija un plazo para aprobar facturas o servicios.",
+               "Existe un mecanismo de aceptación automática por silencio."
+            ],
+            "impacto":{
+               "juridico":"Dilación indefinida de la aprobación; ausencia de plazo contractual exigible.",
+               "economico":"Retraso de ingresos (€)",
+               "operativo":"Necesidad de seguimiento continuo de aprobación (tiempo y recursos)"
+            },
+            "severidad_base":"HIGH"
+         },
+         {
+            "id_chunk":"5.4",
+            "descripcion_riesgo":"Facultad del cliente de deducir penalizaciones directamente de pagos pendientes sin procedimiento contradictorio.",
+            "criterios_activacion":[
+               "La cláusula permite la deducción automática de penalizaciones de pagos pendientes.",
+               "No se exige requerimiento previo al prestador antes de aplicar la deducción.",
+               "No se concede plazo para alegaciones.",
+               "No se requiere conformidad expresa o tácita del prestador."
+            ],
+            "no_activar_si":[
+               "Existe obligación de notificación previa con plazo para alegar.",
+               "La deducción requiere acuerdo o validación conjunta."
+            ],
+            "impacto":{
+               "juridico":"Minoración del cobro sin intervención previa del prestador; inversión de la posición contractual.",
+               "economico":"Reducción inmediata de ingresos (€)",
+               "operativo":null
+            },
+            "severidad_base":"MID"
+         },
+         {
+            "id_chunk":"5.5",
+            "descripcion_riesgo":"Exigencia contractual de documentación extensa con cada factura bajo pena de rechazo.",
+            "criterios_activacion":[
+               "El número de documentos exigidos para emitir cada factura es superior a ocho.",
+               "No existe posibilidad de subsanación posterior.",
+               "El contrato prevé rechazo automático de la factura si falta cualquiera de los documentos."
+            ],
+            "no_activar_si":[
+               "El contrato permite subsanar documentación faltante.",
+               "El número de documentos exigidos es razonable (≤ 8)."
+            ],
+            "impacto":{
+               "juridico":"Riesgo de rechazo formal de facturas por ausencia de un documento.",
+               "economico":"Retraso de cobros por rechazo formal (€)",
+               "operativo":"Incremento carga administrativa por cada factura (tiempo y recursos)"
+            },
+            "severidad_base":"LOW"
+         },
+         {
+            "id_chunk":"5.6",
+            "descripcion_riesgo":"Calificación contractual del precio o unidades como ""orientativos"" sin límites de variación.",
+            "criterios_activacion":[
+               "El contrato califica precio o unidades como ""orientativos"", ""estimados"" o equivalentes.",
+               "No se fijan límites porcentuales, cuantitativos o criterios objetivos de variación.",
+               "No consta carácter vinculante o mínimo garantizado."
+            ],
+            "no_activar_si":[
+               "Existen límites máximos o mínimos definidos.",
+               "Los precios o unidades orientativos están acotados contractualmente."
+            ],
+            "impacto":{
+               "juridico":"Incertidumbre sobre volumen definitivo de facturación; dificultad para rechazar reducciones.",
+               "economico":"Ingresos variables (€)",
+               "operativo":"Planificación de recursos incierta (tiempo y recursos)"
+            },
+            "severidad_base":"MID"
+         },
+         {
+            "id_chunk":"5.7",
+            "descripcion_riesgo":"Modalidad de precio ""a justificar"" sin establecer precio máximo garantizado.",
+            "criterios_activacion":[
+               "El precio se determina en modalidad ""a justificar"" (costes o costes + margen).",
+               "No se establece un precio máximo garantizado.",
+               "No se definen los tipos de costes admisibles.",
+               "No se regula procedimiento de aprobación de dichos costes."
+            ],
+            "no_activar_si":[
+               "Existe límite máximo o tope económico.",
+               "Se detallan costes admisibles o procedimiento de validación."
+            ],
+            "impacto":{
+               "juridico":"Incertidumbre sobre ingreso final; riesgo de rechazo de costes por parte del cliente.",
+               "economico":"Ingresos inciertos (€)",
+               "operativo":null
+            },
+            "severidad_base":"MID"
+         },
+         {
+            "id_chunk":"5.8",
+            "descripcion_riesgo":"Facultad contractual del cliente de aplicar retenciones adicionales a las legales.",
+            "criterios_activacion":[
+               "La cláusula permite retenciones adicionales a las legalmente obligatorias.",
+               "No se indica causa objetiva para aplicar la retención.",
+               "No se fija plazo de liberación.",
+               "No se regulan condiciones de devolución."
+            ],
+            "no_activar_si":[
+               "La retención adicional tiene causa objetiva expresada.",
+               "Se establecen plazos o condiciones de devolución."
+            ],
+            "impacto":{
+               "juridico":"Minoración del cobro efectivo por retención adicional.",
+               "economico":"Ingresos reducidos (€)",
+               "operativo":"Seguimiento de liberación de retención (tiempo y recursos)"
+            },
+            "severidad_base":"LOW"
+         },
+         {
+            "id_chunk":"5.9",
+            "descripcion_riesgo":"Forma de pago mediante pagarés u otros efectos con vencimiento diferido adicional al plazo contractual.",
+            "criterios_activacion":[
+               "El contrato establece el pago mediante pagarés u otros efectos cambiarios.",
+               "El vencimiento de estos efectos añade un plazo adicional al ya previsto contractualmente para el pago."
+            ],
+            "no_activar_si":[
+               "El vencimiento del pagaré coincide con el plazo contractual de pago.",
+               "El efecto cambiario no añade retraso respecto al plazo pactado."
+            ],
+            "impacto":{
+               "juridico":"Dilación adicional del cobro efectivo.",
+               "economico":"Retraso de ingresos (€)",
+               "operativo":"Necesidad de descontar efectos si requiere liquidez anticipada (tiempo y recursos)"
+            },
+            "severidad_base":"LOW"
+         }
+      ]
+   },
+   {
+      "bloque_contractual":"BLOQUE 6 · OBLIGACIONES DEL PRESTADOR",
+      "riesgos":[
+         {
+            "id_chunk":"6.1",
+            "descripcion_riesgo":"Descripción genérica de las obligaciones del prestador sin detalle específico.",
+            "criterios_activacion":[
+               "No aparece ningún listado específico de obligaciones del prestador.",
+               "No se describe secuencia de ejecución o fases del servicio.",
+               "No se incluyen estándares o parámetros exigibles.",
+               "No se mencionan recursos concretos que el prestador debe aportar."
+            ],
+            "no_activar_si":[
+               "El detalle aparece distribuido en otros apartados o anexos incorporados al contrato.",
+               "Existen referencias mínimas a estándares, fases o recursos aunque no sean exhaustivas."
+            ],
+            "impacto":{
+               "juridico":"Interpretaciones divergentes sobre obligaciones concretas; dificultad para delimitar alcance exacto.",
+               "economico":null,
+               "operativo":"Planificación de tareas y recursos incierta (tiempo y recursos)"
+            },
+            "severidad_base":"MID"
+         },
+         {
+            "id_chunk":"6.2",
+            "descripcion_riesgo":"Ausencia de delimitación clara del alcance de las responsabilidades del prestador.",
+            "criterios_activacion":[
+               "No se distingue entre obligaciones de medios y obligaciones de resultado.",
+               "No se excluye responsabilidad por actuaciones ajenas al control del prestador.",
+               "No aparecen límites temporales, territoriales o materiales de responsabilidad."
+            ],
+            "no_activar_si":[
+               "El contrato define algún tipo de límite, exclusión o matiz aunque no sea exhaustivo.",
+               "Las responsabilidades están parcialmente reguladas en anexos incorporados."
+            ],
+            "impacto":{
+               "juridico":"Posibilidad de interpretación extensiva de responsabilidades; incertidumbre sobre límites contractuales.",
+               "economico":null,
+               "operativo":"Necesidad de supervisión y control ampliado de tareas (tiempo y recursos)"
+            },
+            "severidad_base":"MID"
+         },
+         {
+            "id_chunk":"6.3",
+            "descripcion_riesgo":"Exigencia de calidad sin criterios objetivos de cumplimiento.",
+            "criterios_activacion":[
+               "No se indican normas técnicas aplicables.",
+               "No se establecen criterios objetivos de calidad.",
+               "No se definen tolerancias aceptables.",
+               "No se describe procedimiento de verificación."
+            ],
+            "no_activar_si":[
+               "Los estándares aparecen en otros documentos anexos o en especificaciones técnicas incorporadas.",
+               "Existen parámetros mínimos que permitan verificar conformidad, aunque no sean exhaustivos."
+            ],
+            "impacto":{
+               "juridico":"Posibilidad de rechazo subjetivo del trabajo; ausencia de parámetros objetivos de verificación.",
+               "economico":null,
+               "operativo":null
+            },
+            "severidad_base":"LOW"
+         },
+         {
+            "id_chunk":"6.4",
+            "descripcion_riesgo":"Obligaciones establecidas sin plazos específicos de ejecución.",
+            "criterios_activacion":[
+               "No se fija plazo para cada obligación principal.",
+               "No se definen hitos temporales.",
+               "No aparece secuencia temporal de ejecución."
+            ],
+            "no_activar_si":[
+               "Existen plazos o hitos en anexos o documentos incorporados.",
+               "Se establecen referencias mínimas que delimitan temporalidad aunque no sean completas."
+            ],
+            "impacto":{
+               "juridico":"Ausencia de referencia temporal contractual; posibilidad de exigir cumplimiento inmediato por el cliente.",
+               "economico":null,
+               "operativo":"Dificultad para planificar y priorizar tareas (tiempo y recursos)"
+            },
+            "severidad_base":"LOW"
+         },
+         {
+            "id_chunk":"6.5",
+            "descripcion_riesgo":"Obligación genérica de información sin especificar contenido ni periodicidad.",
+            "criterios_activacion":[
+               "No se especifica el contenido de los informes o comunicaciones.",
+               "No se determina periodicidad de la información.",
+               "No se establece formato, soporte o estructura requerida.",
+               "No se define plazo de respuesta o entrega."
+            ],
+            "no_activar_si":[
+               "El contenido, periodicidad o formato aparece en anexos o referencias incorporadas.",
+               "Existen requisitos mínimos aunque no sean exhaustivos."
+            ],
+            "impacto":{
+               "juridico":"Ausencia de especificación contractual del contenido y forma de la información; posibilidad de exigencia de informes no previstos.",
+               "economico":null,
+               "operativo":"Carga adicional de generación de informes no previstos (tiempo y recursos)"
+            },
+            "severidad_base":"LOW"
+         }
+      ]
+   },
+   {
+      "bloque_contractual":"BLOQUE 7 · OBLIGACIONES DEL CLIENTE",
+      "riesgos":[
+         {
+            "id_chunk":"7.1",
+            "descripcion_riesgo":"Ausencia de detalle de las obligaciones específicas del cliente.",
+            "criterios_activacion":[
+               "No existe cláusula específica que regule las obligaciones del cliente.",
+               "No se detalla la información que el cliente debe suministrar.",
+               "No se especifican accesos, medios o recursos que el cliente debe facilitar.",
+               "No se establecen plazos de cumplimiento para dichas obligaciones."
+            ],
+            "no_activar_si":[
+               "Las obligaciones del cliente aparecen en otros apartados o anexos incorporados.",
+               "Existen menciones mínimas sobre información, accesos o plazos, aunque no sean exhaustivas."
+            ],
+            "impacto":{
+               "juridico":"Dificultad para exigir cumplimiento formal; ausencia de base contractual para reclamar incumplimientos del cliente.",
+               "economico":null,
+               "operativo":"Retrasos en ejecución del servicio por falta de información o accesos"
+            },
+            "severidad_base":"MID"
+         },
+         {
+            "id_chunk":"7.2",
+            "descripcion_riesgo":"Obligaciones del cliente establecidas sin plazos máximos de cumplimiento.",
+            "criterios_activacion":[
+               "El contrato no fija plazo máximo para suministrar información.",
+               "No se establece plazo para facilitar accesos necesarios.",
+               "No se determina plazo máximo para emitir validaciones o revisiones.",
+               "No se regulan consecuencias ante retrasos o incumplimientos del cliente."
+            ],
+            "no_activar_si":[
+               "Los plazos aparecen en otros apartados o en anexos incorporados.",
+               "Existen menciones mínimas que permitan identificar un marco temporal básico."
+            ],
+            "impacto":{
+               "juridico":"Imposibilidad de exigir cumplimiento temporal; ausencia de base para reclamar incumplimiento por retraso.",
+               "economico":null,
+               "operativo":"Dificultad para planificar tareas dependientes del cliente (tiempo y recursos)"
+            },
+            "severidad_base":"MID"
+         },
+         {
+            "id_chunk":"7.3",
+            "descripcion_riesgo":"Ausencia de regulación de la obligación del cliente de proporcionar información necesaria.",
+            "criterios_activacion":[
+               "No se establece la obligación expresa del cliente de suministrar información necesaria.",
+               "No se fijan plazos para dicha entrega.",
+               "No se define contenido, formato o alcance de la información requerida."
+            ],
+            "no_activar_si":[
+               "El contrato incluye referencias a la información a suministrar en anexos o documentos incorporados.",
+               "Existen menciones mínimas que permitan identificar qué información debe aportar el cliente."
+            ],
+            "impacto":{
+               "juridico":"Imposibilidad de exigir contractual y formalmente la entrega de información necesaria; dificultad para reclamar retrasos o ausencia de información.",
+               "economico":null,
+               "operativo":"Retrasos o bloqueo en la prestación del servicio"
+            },
+            "severidad_base":"MID"
+         },
+         {
+            "id_chunk":"7.4",
+            "descripcion_riesgo":"Obligación de pago del cliente condicionada a criterios subjetivos o discrecionales.",
+            "criterios_activacion":[
+               "El pago depende de satisfacción subjetiva del cliente.",
+               "La conformidad del cliente es discrecional o no sujeta a criterios objetivos.",
+               "El pago está condicionado a disponibilidad presupuestaria interna del cliente.",
+               "No se incluyen parámetros objetivos que permitan exigir el cobro."
+            ],
+            "no_activar_si":[
+               "El contrato establece criterios técnicos, verificables u objetivos para la aceptación o el pago.",
+               "La conformidad del cliente está vinculada a criterios de entrega o hitos definidos."
+            ],
+            "impacto":{
+               "juridico":"Incertidumbre sobre la exigibilidad del cobro; posibilidad de retención de pago por criterios subjetivos.",
+               "economico":"Retraso o retención de ingresos (€)",
+               "operativo":null
+            },
+            "severidad_base":"MID"
+         },
+         {
+            "id_chunk":"7.5",
+            "descripcion_riesgo":"Ausencia de regulación de la obligación del cliente de participar en revisiones y validaciones.",
+            "criterios_activacion":[
+               "No se establece obligación del cliente de revisar entregables o resultados.",
+               "No se fija plazo máximo para aprobar o validar.",
+               "No se regulan consecuencias de falta de pronunciamiento del cliente."
+            ],
+            "no_activar_si":[
+               "Los plazos o condiciones de validación aparecen en anexos o apartados vinculados.",
+               "Existen referencias mínimas a la participación del cliente, aunque no sean exhaustivas."
+            ],
+            "impacto":{
+               "juridico":"Posibilidad de bloqueo de servicios por inactividad del cliente; ausencia de base contractual para exigir participación.",
+               "economico":null,
+               "operativo":"Retrasos por inactividad del cliente (tiempo y recursos)"
+            },
+            "severidad_base":"LOW"
+         }
+      ]
+   },
+   {
+      "bloque_contractual":"BLOQUE 8 · SUBCONTRATACIÓN",
+      "riesgos":[
+         {
+            "id_chunk":"8.1",
+            "descripcion_riesgo":"Prohibición contractual de cualquier tipo de subcontratación.",
+            "criterios_activacion":[
+               "La cláusula establece prohibición expresa de subcontratar.",
+               "No existe ninguna excepción, autorización posible o procedimiento para solicitar permiso."
+            ],
+            "no_activar_si":[
+               "El contrato permite subcontratar mediante autorización.",
+               "Existe cualquier excepción explícita (p. ej., servicios auxiliares, perfiles concretos, límites porcentuales)."
+            ],
+            "impacto":{
+               "juridico":"Obligación de ejecutar la totalidad del contrato con recursos propios; ausencia de flexibilidad organizativa mediante terceros.",
+               "economico":null,
+               "operativo":"Dificultad para gestionar recursos y capacidad interna limitada"
+            },
+            "severidad_base":"MID"
+         },
+         {
+            "id_chunk":"8.2",
+            "descripcion_riesgo":"Establecimiento de responsabilidad solidaria del prestador por todos los actos del subcontratista.",
+            "criterios_activacion":[
+               "La cláusula impone responsabilidad solidaria del prestador por actuaciones del subcontratista.",
+               "La responsabilidad no se limita únicamente a actividades relacionadas con el contrato.",
+               "No se reconoce derecho de repetición o recuperación frente al subcontratista."
+            ],
+            "no_activar_si":[
+               "La responsabilidad está limitada a actos vinculados estrictamente al contrato.",
+               "El prestador puede repetir contra el subcontratista."
+            ],
+            "impacto":{
+               "juridico":"Exposición a reclamaciones por actuaciones de terceros ajenas al contrato; responsabilidad integral sobre hechos sin control directo.",
+               "economico":"Potencial reclamaciones o indemnizaciones (€)",
+               "operativo":null
+            },
+            "severidad_base":"HIGH"
+         },
+         {
+            "id_chunk":"8.3",
+            "descripcion_riesgo":"Limitación contractual de la subcontratación por debajo del treinta por ciento del valor del contrato.",
+            "criterios_activacion":[
+               "Se fija un límite máximo de subcontratación inferior al 30 % del valor total del contrato."
+            ],
+            "no_activar_si":[
+               "El límite es igual o superior al 30 %.",
+               "La limitación está vinculada a requisitos legales o normativos."
+            ],
+            "impacto":{
+               "juridico":"Obligación de internalizar la mayor parte de la ejecución; reducción significativa de flexibilidad organizativa.",
+               "economico":null,
+               "operativo":"Mayor carga interna de recursos y planificación"
+            },
+            "severidad_base":"MID"
+         },
+         {
+            "id_chunk":"8.4",
+            "descripcion_riesgo":"Exigencia de autorización previa con plazo de respuesta superior a veinte días o discrecionalidad total.",
+            "criterios_activacion":[
+               "El contrato exige autorización previa del cliente para subcontratar.",
+               "El plazo de respuesta del cliente supera los 20 días naturales o no existe.",
+               "No se establecen criterios objetivos para conceder o denegar la autorización."
+            ],
+            "no_activar_si":[
+               "El plazo de respuesta es ≤ 20 días.",
+               "Existen criterios objetivos de aprobación (p. ej., solvencia, cualificación, compliance)."
+            ],
+            "impacto":{
+               "juridico":"Riesgo de retrasos significativos en incorporación de subcontratistas y posibles incumplimientos de plazos contractuales.",
+               "economico":"Posibles sanciones por demoras (€)",
+               "operativo":"Limitación de flexibilidad en asignación de recursos; riesgo de penalizaciones"
+            },
+            "severidad_base":"MID"
+         },
+         {
+            "id_chunk":"8.5",
+            "descripcion_riesgo":"Exigencia de documentación extensa del subcontratista previa a autorización.",
+            "criterios_activacion":[
+               "El contrato exige más de ocho documentos distintos para autorizar a un subcontratista."
+            ],
+            "no_activar_si":[
+               "El número de documentos exigidos es ≤ 8.",
+               "La documentación exigida está relacionada con requisitos legales mínimos."
+            ],
+            "impacto":{
+               "juridico":"Incremento de la carga administrativa; posibles retrasos en incorporación de subcontratistas.",
+               "economico":null,
+               "operativo":"Demoras en ejecución debido a trámites documentales"
+            },
+            "severidad_base":"LOW"
+         },
+         {
+            "id_chunk":"8.6",
+            "descripcion_riesgo":"Penalización uniforme por subcontratación irregular sin distinguir gravedad.",
+            "criterios_activacion":[
+               "La penalización prevista es ≥ 5 % del valor del contrato o permite resolución automática.",
+               "No se establece gradación de penalizaciones según gravedad del incumplimiento.",
+               "No existe plazo para subsanar la irregularidad."
+            ],
+            "no_activar_si":[
+               "Hay rangos, niveles o cuantías distintas en función de la gravedad.",
+               "Se permite subsanación previa antes de aplicar penalización o resolución."
+            ],
+            "impacto":{
+               "juridico":"Aplicación de consecuencias contractuales graves sin proporcionalidad; riesgo de sanción económica o resolución sin posibilidad de corrección.",
+               "economico":"Penalización o pérdida de contrato (€)",
+               "operativo":"Necesidad de corregir irregularidades administrativas sin tiempo suficiente"
+            },
+            "severidad_base":"MID"
+         },
+         {
+            "id_chunk":"8.7",
+            "descripcion_riesgo":"Plazo de notificación de subcontrataciones inferior a diez días.",
+            "criterios_activacion":[
+               "El plazo de notificación al cliente es inferior a 10 días laborables."
+            ],
+            "no_activar_si":[
+               "El plazo es igual o superior a 10 días.",
+               "Se permiten notificaciones posteriores en casos urgentes o justificados."
+            ],
+            "impacto":{
+               "juridico":"Plazo limitado para notificar subcontrataciones; posible dificultad para coordinación de colaboraciones.",
+               "economico":null,
+               "operativo":"Necesidad de anticipación significativa para organizar subcontratistas"
+            },
+            "severidad_base":"LOW"
+         }
+      ]
+   },
+   {
+      "bloque_contractual":"BLOQUE 9 · RESPONSABILIDAD",
+      "riesgos":[
+         {
+            "id_chunk":"9.1",
+            "descripcion_riesgo":"Eliminación contractual de la exención de responsabilidad por caso fortuito o fuerza mayor.",
+            "criterios_activacion":[
+               "El contrato incluye cláusula que elimina o restringe expresamente la exoneración por caso fortuito y/o fuerza mayor.",
+               "Las penalizaciones aplicables no excluyen estos supuestos ni contienen referencia alguna a su inaplicabilidad en caso de fuerza mayor."
+            ],
+            "no_activar_si":[
+               "El contrato mantiene la exoneración legal por fuerza mayor.",
+               "Las penalizaciones excluyen expresamente caso fortuito o fuerza mayor."
+            ],
+            "impacto":{
+               "juridico":"Responsabilidad del prestador frente a eventos fuera de su control; posibilidad de aplicación de penalizaciones o sanciones aun en situaciones de fuerza mayor.",
+               "economico":"Indemnizaciones o penalizaciones inesperadas",
+               "operativo":null
+            },
+            "severidad_base":"HIGH"
+         },
+         {
+            "id_chunk":"9.2",
+            "descripcion_riesgo":"Inversión de la carga de la prueba mediante presunción de culpa del prestador.",
+            "criterios_activacion":[
+               "El contrato establece que el prestador se presume culpable salvo prueba en contrario.",
+               "El contrato dispone que la falta de resultado implica automáticamente incumplimiento imputable al prestador."
+            ],
+            "no_activar_si":[
+               "El contrato distingue entre obligaciones de medios y de resultado.",
+               "Existen criterios objetivos para valorar el cumplimiento del prestador."
+            ],
+            "impacto":{
+               "juridico":"Obligación de demostrar ausencia de culpa frente a reclamaciones; inversión de la posición probatoria respecto a incumplimientos.",
+               "economico":null,
+               "operativo":null
+            },
+            "severidad_base":"MID"
+         },
+         {
+            "id_chunk":"9.3",
+            "descripcion_riesgo":"Atribución al prestador de responsabilidad por actos del cliente o de terceros.",
+            "criterios_activacion":[
+               "El contrato atribuye al prestador responsabilidad por actuaciones del cliente o de terceros ajenos.",
+               "Se incluyen obligaciones de coordinación de partes ajenas sin límite claro de responsabilidad."
+            ],
+            "no_activar_si":[
+               "La responsabilidad está limitada a actos relacionados con el ámbito del contrato.",
+               "El prestador no asume obligaciones sobre hechos no controlables."
+            ],
+            "impacto":{
+               "juridico":"Exposición a responsabilidad por hechos no controlados directamente; imposibilidad de limitar riesgo mediante diligencia propia.",
+               "economico":"Potencial reclamaciones (€)",
+               "operativo":null
+            },
+            "severidad_base":"MID"
+         },
+         {
+            "id_chunk":"9.4",
+            "descripcion_riesgo":"Compatibilidad contractual entre penalizaciones e indemnización por los mismos hechos.",
+            "criterios_activacion":[
+               "El contrato permite reclamar simultáneamente penalización e indemnización por el mismo incumplimiento.",
+               "No existe declaración de incompatibilidad o limitación expresa entre ambas figuras."
+            ],
+            "no_activar_si":[
+               "El contrato establece incompatibilidad entre penalización e indemnización.",
+               "Las penalizaciones están configuradas como sustitutivas de la indemnización."
+            ],
+            "impacto":{
+               "juridico":"Exposición a doble reclamación económica por el mismo incumplimiento; incremento significativo de la responsabilidad total.",
+               "economico":"Riesgo de pagos duplicados (€)",
+               "operativo":null
+            },
+            "severidad_base":"HIGH"
+         },
+         {
+            "id_chunk":"9.5",
+            "descripcion_riesgo":"Falta de limitación cuantitativa de la responsabilidad contractual del prestador.",
+            "criterios_activacion":[
+               "No se establece límite máximo cuantitativo de responsabilidad.",
+               "No existe referencia a vinculación con importe del contrato o con una cobertura aseguradora."
+            ],
+            "no_activar_si":[
+               "El contrato fija un tope claro de responsabilidad.",
+               "El límite está vinculado a precio del contrato, anualidad o póliza."
+            ],
+            "impacto":{
+               "juridico":"Exposición económica potencialmente ilimitada; riesgo de insolvencia frente a reclamaciones elevadas no previstas.",
+               "economico":"Reclamaciones superiores al valor del contrato (€)",
+               "operativo":null
+            },
+            "severidad_base":"HIGH"
+         },
+         {
+            "id_chunk":"9.6",
+            "descripcion_riesgo":"Ausencia de exclusión contractual de responsabilidad por daños indirectos, lucro cesante o pérdida de oportunidad.",
+            "criterios_activacion":[
+               "El contrato no excluye explícitamente daños indirectos, lucro cesante o pérdida de oportunidad."
+            ],
+            "no_activar_si":[
+               "Se excluyen expresamente estos tipos de daños.",
+               "Existen limitaciones parciales que acotan el alcance de indemnización."
+            ],
+            "impacto":{
+               "juridico":"Posibilidad de reclamaciones por daños más allá del directo; ausencia de limitación de tipo de daños indemnizables.",
+               "economico":"Posible reclamación adicional (€)",
+               "operativo":null
+            },
+            "severidad_base":"LOW"
+         },
+         {
+            "id_chunk":"9.7",
+            "descripcion_riesgo":"Ausencia de delimitación de responsabilidades en obligaciones interdependientes.",
+            "criterios_activacion":[
+               "El contrato requiere colaboración del cliente pero no regula reparto de responsabilidad en casos de incumplimientos concurrentes."
+            ],
+            "no_activar_si":[
+               "Existen reglas que delimitan participación del cliente y del prestador.",
+               "Se prevé procedimiento de determinación de responsabilidad en casos mixtos."
+            ],
+            "impacto":{
+               "juridico":"Dificultad para acreditar causas imputables al cliente; ausencia de criterio contractual para distribuir responsabilidades.",
+               "economico":null,
+               "operativo":null
+            },
+            "severidad_base":"LOW"
+         },
+         {
+            "id_chunk":"9.8",
+            "descripcion_riesgo":"Aplicación automática de consecuencias contractuales sin requerimiento ni plazo de subsanación.",
+            "criterios_activacion":[
+               "El contrato prevé consecuencias (penalizaciones, resoluciones, etc.) aplicables automáticamente ante un incumplimiento.",
+               "No existe requerimiento previo, ni plazo de subsanación, ni procedimiento contradictorio."
+            ],
+            "no_activar_si":[
+               "Se exige requerimiento previo o existan plazos de corrección.",
+               "Hay procedimientos formales antes de ejecutar consecuencias."
+            ],
+            "impacto":{
+               "juridico":"Aplicación inmediata de sanciones o penalizaciones sin posibilidad de corrección.",
+               "economico":null,
+               "operativo":"Riesgo procedimental en gestión de cumplimiento"
+            },
+            "severidad_base":"LOW"
+         },
+         {
+            "id_chunk":"9.9",
+            "descripcion_riesgo":"Establecimiento de obligación de resultado sin contemplar excepciones.",
+            "criterios_activacion":[
+               "La cláusula impone una obligación de resultado concreto.",
+               "No se prevén excepciones por causas no imputables, imposibilidad sobrevenida o circunstancias externas."
+            ],
+            "no_activar_si":[
+               "El contrato prevé exoneraciones por causas ajenas al prestador.",
+               "La obligación está modulada como de medios o sujeta a parámetros objetivos."
+            ],
+            "impacto":{
+               "juridico":"Responsabilidad objetiva del prestador; imposibilidad de exoneración alegando diligencia o causas externas.",
+               "economico":"Posibles reclamaciones por incumplimiento de resultado",
+               "operativo":null
+            },
+            "severidad_base":"MID"
+         },
+         {
+            "id_chunk":"9.10",
+            "descripcion_riesgo":"Exigencia contractual de seguros con coberturas superiores al triple del valor del contrato.",
+            "criterios_activacion":[
+               "Se exige un seguro cuya cobertura supera tres veces el valor total del contrato.",
+               "El coste íntegro del seguro corre a cargo del prestador."
+            ],
+            "no_activar_si":[
+               "La cobertura exigida está alineada con el valor del contrato o con estándares del sector.",
+               "La parte contratante asume total o parcialmente el coste del seguro."
+            ],
+            "impacto":{
+               "juridico":"Obligación de contratar seguros con coberturas significativamente superiores al valor del contrato; incremento de costes.",
+               "economico":"Aumento de gasto en aseguramiento (€)",
+               "operativo":null
+            },
+            "severidad_base":"LOW"
+         }
+      ]
+   },
+   {
+      "bloque_contractual":"BLOQUE 10 · CONFIDENCIALIDAD",
+      "riesgos":[
+         {
+            "id_chunk":"10.1",
+            "descripcion_riesgo":"Obligación de confidencialidad sin definición de qué información se considera confidencial.",
+            "criterios_activacion":[
+               "La cláusula de confidencialidad no identifica ningún tipo de información (ni técnica, ni científica, ni comercial, ni financiera, ni equivalente).",
+               "La cláusula se limita a fórmulas genéricas como ""toda información"", ""cualquier dato"", ""información de cualquier tipo"" u otras similares sin delimitación material mínima.",
+               "El texto contractual no permite determinar objetivamente qué información queda protegida (ausencia total de criterios materiales, de origen o de contexto)."
+            ],
+            "no_activar_si":[
+               "La cláusula identifica al menos un tipo de información (técnica, científica, comercial, financiera, etc.).",
+               "La cláusula identifica el origen o titularidad de la información.",
+               "La cláusula identifica el contexto de acceso o generación (ejecución del contrato)."
+            ],
+            "impacto":{
+               "juridico":"Incertidumbre sobre qué información puede comunicarse; posibilidad de reclamaciones por divulgación de información considerada no confidencial por el prestador.",
+               "economico":null,
+               "operativo":"Riesgo de restricciones internas sobre información"
+            },
+            "severidad_base":"MID"
+         },
+         {
+            "id_chunk":"10.2",
+            "descripcion_riesgo":"Obligación de confidencialidad sin especificar medidas de protección exigibles.",
+            "criterios_activacion":[
+               "El contrato contiene una obligación general de confidencialidad.",
+               "No se especifican medidas de protección mínimas, estándares aplicables o referencias funcionales a protocolos de seguridad."
+            ],
+            "no_activar_si":[
+               "Se mencionan estándares mínimos (p. ej., ""medidas razonables"", ""medidas equivalentes a las aplicadas internamente"", normas técnicas, etc.).",
+               "La cláusula remite a políticas o procedimientos existentes que definan medidas de protección."
+            ],
+            "impacto":{
+               "juridico":"Ausencia de estándar contractual; posibilidad de que el cliente exija medidas adicionales o superiores a las habituales sin acuerdo previo.",
+               "economico":null,
+               "operativo":"Incremento de carga administrativa si se exigen medidas adicionales"
+            },
+            "severidad_base":"LOW"
+         },
+         {
+            "id_chunk":"10.3",
+            "descripcion_riesgo":"Ausencia de regulación de la comunicación de información confidencial a terceros necesarios para la prestación.",
+            "criterios_activacion":[
+               "Existe una cláusula de confidencialidad aplicable al prestador.",
+               "No se regula la comunicación de información confidencial a terceros (subcontratistas, colaboradores, proveedores).",
+               "No existe autorización previa, responsabilidad definida o criterio contractual para estas comunicaciones."
+            ],
+            "no_activar_si":[
+               "El contrato permite comunicar información a terceros bajo ciertas condiciones.",
+               "La cláusula incluye criterios de responsabilidad o autorización expresa."
+            ],
+            "impacto":{
+               "juridico":"Incertidumbre sobre la posibilidad de compartir información con terceros necesarios; ausencia de criterio contractual sobre comunicaciones autorizadas.",
+               "economico":null,
+               "operativo":"Riesgo de retrasos o bloqueos en la prestación del servicio"
+            },
+            "severidad_base":"MID"
+         },
+         {
+            "id_chunk":"10.4",
+            "descripcion_riesgo":"Ausencia de regulación del procedimiento de devolución o destrucción de información al finalizar el contrato.",
+            "criterios_activacion":[
+               "No existe obligación contractual de devolver o destruir información al finalizar el contrato.",
+               "El contrato no define procedimiento, forma, plazos ni soporte para dicha devolución/destrucción.",
+               "No se asignan responsabilidades ni costes asociados al proceso."
+            ],
+            "no_activar_si":[
+               "El contrato establece alguna obligación, procedimiento o referencia funcional sobre devolución/destrucción.",
+               "El contrato asigna cualquiera de los elementos críticos (plazos, soporte, responsable, costes)."
+            ],
+            "impacto":{
+               "juridico":"Ausencia de criterio contractual sobre tratamiento de información al finalizar; riesgo de requerimientos costosos no previstos por parte del cliente.",
+               "economico":"Posibles costes no previstos",
+               "operativo":"Incremento de carga administrativa y logística al finalizar el contrato"
+            },
+            "severidad_base":"LOW"
+         },
+         {
+            "id_chunk":"10.5",
+            "descripcion_riesgo":"Obligación de confidencialidad sin límite temporal tras finalización del contrato.",
+            "criterios_activacion":[
+               "La cláusula de confidencialidad está presente en el contrato.",
+               "No se establece duración de la obligación ni condiciones de extinción tras la finalización del contrato."
+            ],
+            "no_activar_si":[
+               "El contrato fija un plazo concreto (p. ej., 2, 3 o 5 años).",
+               "El contrato prevé condiciones de extinción (p. ej., información pública, autorización, prescripción legal)."
+            ],
+            "impacto":{
+               "juridico":"Obligación de duración indeterminada; ausencia de criterio contractual sobre cuándo cesa la obligación de confidencialidad.",
+               "economico":null,
+               "operativo":"Seguimiento indefinido de información confidencial"
+            },
+            "severidad_base":"LOW"
+         }
+      ]
+   },
+   {
+      "bloque_contractual":"BLOQUE 11 · PENALIZACIONES",
+      "riesgos":[
+         {
+            "id_chunk":"11.1",
+            "descripcion_riesgo":"Establecimiento de penalizaciones por supuestos jurídicamente indeterminados.",
+            "criterios_activacion":[
+               "La cláusula de penalización existe en el contrato.",
+               "Las penalizaciones se aplican a conceptos genéricos como ""incumplimiento parcial"", ""cumplimiento defectuoso"", ""calidad insatisfactoria"" u otros equivalentes sin definición objetiva.",
+               "No existen criterios objetivos, verificables o medibles que determinen cuándo se aplican dichas penalizaciones."
+            ],
+            "no_activar_si":[
+               "El contrato incluye definiciones o indicadores objetivos vinculados a esos conceptos.",
+               "El contrato contiene parámetros, hitos o métricas verificables para determinar la aplicación."
+            ],
+            "impacto":{
+               "juridico":"Discrecionalidad del cliente en la aplicación de penalizaciones; dificultad para determinar ex ante qué conductas generan penalización.",
+               "economico":null,
+               "operativo":"Riesgo de ejecución de servicios bajo incertidumbre"
+            },
+            "severidad_base":"MID"
+         },
+         {
+            "id_chunk":"11.2",
+            "descripcion_riesgo":"Posibilidad de acumulación ilimitada de penalizaciones sin tope máximo.",
+            "criterios_activacion":[
+               "Existen múltiples penalizaciones aplicables en el contrato.",
+               "No hay un tope acumulativo, límite máximo o regla que restrinja la suma total de penalizaciones.",
+               "No se establece incompatibilidad entre penalizaciones aplicables por los mismos hechos."
+            ],
+            "no_activar_si":[
+               "El contrato fija un tope máximo acumulado de penalizaciones.",
+               "Se establece incompatibilidad o exclusión entre penalizaciones concurrentes."
+            ],
+            "impacto":{
+               "juridico":"Exposición ilimitada frente a penalizaciones; riesgo de que penalizaciones acumuladas superen el valor del contrato; imposibilidad de anticipar exposición máxima.",
+               "economico":"Riesgo de pérdidas superiores al valor del contrato",
+               "operativo":null
+            },
+            "severidad_base":"HIGH"
+         },
+         {
+            "id_chunk":"11.3",
+            "descripcion_riesgo":"Aplicación automática de penalizaciones sin requerimiento previo.",
+            "criterios_activacion":[
+               "Existe penalización automática prevista ante determinados incumplimientos.",
+               "No se exige notificación previa al prestador ni plazo para subsanar el incumplimiento.",
+               "El contrato permite compensación directa mediante deducción en facturas sin intervención del prestador."
+            ],
+            "no_activar_si":[
+               "Se exige requerimiento previo o existe un plazo de subsanación.",
+               "La penalización automática requiere confirmación, procedimiento o contradicción previa."
+            ],
+            "impacto":{
+               "juridico":"Aplicación inmediata sin oportunidad de corrección; ausencia de gradación procedimental.",
+               "economico":"Deducción automática de facturas",
+               "operativo":"Riesgo de gestión inmediata de penalizaciones"
+            },
+            "severidad_base":"MID"
+         },
+         {
+            "id_chunk":"11.4",
+            "descripcion_riesgo":"Penalizaciones aplicables a supuestos de fuerza mayor sin exclusión expresa.",
+            "criterios_activacion":[
+               "Se prevén penalizaciones por incumplimiento o retrasos.",
+               "No existe exclusión expresa para casos de fuerza mayor o causas no imputables al prestador."
+            ],
+            "no_activar_si":[
+               "El contrato excluye expresamente la aplicación de penalizaciones en casos de fuerza mayor.",
+               "Existen mecanismos de suspensión o exoneración por causas externas."
+            ],
+            "impacto":{
+               "juridico":"Posible aplicación de penalizaciones ante imposibilidad de cumplimiento por causas externas; ausencia de criterio contractual claro sobre exclusión.",
+               "economico":"Riesgo de costes indebidos por fuerza mayor",
+               "operativo":null
+            },
+            "severidad_base":"MID"
+         },
+         {
+            "id_chunk":"11.5",
+            "descripcion_riesgo":"Penalizaciones diarias por demora sin límite acumulativo.",
+            "criterios_activacion":[
+               "El contrato establece penalización diaria por retraso.",
+               "No existe ningún límite acumulado o tope máximo de penalización diaria.",
+               "No se distingue la aplicación según la gravedad o duración del retraso."
+            ],
+            "no_activar_si":[
+               "Existe límite máximo acumulado.",
+               "Se prevén escalados según duración o gravedad."
+            ],
+            "impacto":{
+               "juridico":"Acumulación creciente de penalizaciones; riesgo de superar valor del contrato en retrasos prolongados.",
+               "economico":"Riesgo de sobrecoste por demoras prolongadas",
+               "operativo":"Necesidad de control diario de cumplimiento de plazos"
+            },
+            "severidad_base":"MID"
+         },
+         {
+            "id_chunk":"11.6",
+            "descripcion_riesgo":"Penalizaciones establecidas sin cuantía fija ni fórmula de cálculo.",
+            "criterios_activacion":[
+               "El contrato prevé penalizaciones aplicables.",
+               "No se define cuantía fija ni fórmula objetiva para calcular el importe.",
+               "Las variables de cálculo no están definidas o son indeterminadas."
+            ],
+            "no_activar_si":[
+               "Existe fórmula matemática clara o cuantía fijada.",
+               "Las variables o parámetros de cálculo están completamente definidos."
+            ],
+            "impacto":{
+               "juridico":"Incertidumbre sobre cuantificación de penalizaciones; discrecionalidad del cliente en determinación del importe.",
+               "economico":"Variabilidad en cálculo de sanciones",
+               "operativo":null
+            },
+            "severidad_base":"LOW"
+         },
+         {
+            "id_chunk":"11.7",
+            "descripcion_riesgo":"Varios tipos de penalizaciones aplicables sin criterio de incompatibilidad o prevalencia.",
+            "criterios_activacion":[
+               "El contrato establece tres o más tipos distintos de penalizaciones.",
+               "El contrato no define reglas de incompatibilidad, acumulación, alternativa o prevalencia entre ellas."
+            ],
+            "no_activar_si":[
+               "Existen reglas de incompatibilidad o alternativa.",
+               "El contrato fija prevalencia entre penalizaciones potencialmente concurrentes."
+            ],
+            "impacto":{
+               "juridico":"Posibilidad de aplicación simultánea de múltiples penalizaciones; ausencia de criterio contractual ante superposición de supuestos.",
+               "economico":"Riesgo de sobreimposición de penalizaciones",
+               "operativo":"Necesidad de gestionar simultaneidad de penalizaciones"
+            },
+            "severidad_base":"LOW"
+         },
+         {
+            "id_chunk":"11.8",
+            "descripcion_riesgo":"Penalizaciones uniformes sin distinguir gravedad del incumplimiento.",
+            "criterios_activacion":[
+               "Existe penalización económica prevista.",
+               "No se diferencia la penalización según gravedad, tipo o impacto del incumplimiento."
+            ],
+            "no_activar_si":[
+               "El contrato establece niveles, escalas o gradaciones.",
+               "La penalización varía en función de gravedad o reiteración."
+            ],
+            "impacto":{
+               "juridico":"Misma consecuencia económica para incumplimientos leves y graves; ausencia de proporcionalidad entre incumplimiento y penalización.",
+               "economico":"Riesgo de sanción desproporcionada",
+               "operativo":"Necesidad de seguimiento uniforme de todos los incumplimientos"
+            },
+            "severidad_base":"LOW"
+         }
+      ]
+   },
+   {
+      "bloque_contractual":"BLOQUE 12 · RESOLUCIÓN Y TERMINACIÓN ANTICIPADA",
+      "riesgos":[
+         {
+            "id_chunk":"12.1",
+            "descripcion_riesgo":"Causas de resolución formuladas mediante conceptos jurídicos indeterminados o cláusulas abiertas.",
+            "criterios_activacion":[
+               "Existe una cláusula de resolución anticipada en el contrato.",
+               "Las causas de resolución se formulan mediante expresiones genéricas como ""incumplimiento de obligación principal"", ""cumplimiento defectuoso"", ""falta de calidad"", ""mal servicio"" o expresiones abiertas como ""cuando lo considere necesario"".",
+               "No existe referencia a obligaciones concretas ni criterios objetivos, verificables y medibles que permitan determinar la concurrencia de la causa."
+            ],
+            "no_activar_si":[
+               "El contrato describe obligaciones específicas cuyo incumplimiento activa la resolución.",
+               "Se incluyen criterios verificables, métricas, hitos o parámetros que delimitan objetivamente la causa resolutoria."
+            ],
+            "impacto":{
+               "juridico":"Discrecionalidad del cliente en la apreciación de la causa resolutoria; incertidumbre sobre qué conductas habilitan la resolución; riesgo de conflictos interpretativos.",
+               "economico":null,
+               "operativo":"Riesgo de interrupción de la prestación"
+            },
+            "severidad_base":"MID"
+         },
+         {
+            "id_chunk":"12.2",
+            "descripcion_riesgo":"Facultad de resolución inmediata sin requerimiento previo ni posibilidad de subsanar el incumplimiento.",
+            "criterios_activacion":[
+               "El contrato permite la resolución directa ante un incumplimiento.",
+               "No existe requerimiento previo, plazo para subsanar, ni procedimiento contradictorio.",
+               "La resolución inmediata se aplica incluso a incumplimientos no esenciales o no calificados como graves."
+            ],
+            "no_activar_si":[
+               "Existe requerimiento previo o se concede un plazo de subsanación.",
+               "La resolución inmediata se limita a incumplimientos graves, esenciales o claramente definidos."
+            ],
+            "impacto":{
+               "juridico":"Terminación abrupta del contrato sin oportunidad de corrección; riesgo operativo y económico inmediato; pérdida de ingresos y dificultad probatoria.",
+               "economico":"Pérdida de ingresos proyectados",
+               "operativo":"Interrupción inmediata de la prestación"
+            },
+            "severidad_base":"HIGH"
+         },
+         {
+            "id_chunk":"12.3",
+            "descripcion_riesgo":"Facultad de desistimiento unilateral del cliente configurada de forma desequilibrada.",
+            "criterios_activacion":[
+               "El contrato permite al cliente desistir sin causa (ad nutum) o de forma unilateral.",
+               "No existe obligación de indemnizar, o la indemnización no está cuantificada ni vinculada a criterios verificables.",
+               "No se establece fórmula de cálculo o el preaviso es insuficiente para reorganizar recursos."
+            ],
+            "no_activar_si":[
+               "Existe indemnización definida o fórmula objetiva de cálculo.",
+               "Se fija un preaviso suficiente para mitigar impacto operativo."
+            ],
+            "impacto":{
+               "juridico":"Posibilidad de terminación unilateral sin compensación económica adecuada; pérdida de ingresos futuros; traslado del riesgo empresarial al prestador.",
+               "economico":"Pérdida de ingresos esperados",
+               "operativo":"Planificación de recursos afectada"
+            },
+            "severidad_base":"MID"
+         },
+         {
+            "id_chunk":"12.4",
+            "descripcion_riesgo":"Ausencia de regulación expresa sobre la liquidación económica tras la resolución.",
+            "criterios_activacion":[
+               "El contrato regula la resolución anticipada.",
+               "No reconoce el derecho al cobro de servicios ya prestados.",
+               "No regula el tratamiento de servicios en curso en la fecha de resolución.",
+               "No establece criterios de valoración, certificación o facturación de la ejecución parcial."
+            ],
+            "no_activar_si":[
+               "El contrato indica cómo se liquidan servicios prestados y en curso.",
+               "Existen criterios para valorar trabajos parciales o pendientes."
+            ],
+            "impacto":{
+               "juridico":"Incertidumbre sobre cobro de trabajos totales o parciales; necesidad de reclamación posterior; riesgo de conflicto económico post resolución.",
+               "economico":"Retrasos o pérdida parcial de cobro",
+               "operativo":null
+            },
+            "severidad_base":"LOW"
+         },
+         {
+            "id_chunk":"12.5",
+            "descripcion_riesgo":"Desequilibrio estructural en las facultades de resolución entre las partes.",
+            "criterios_activacion":[
+               "El contrato atribuye múltiples causas de resolución al cliente, ya sean genéricas o específicas.",
+               "Las facultades equivalentes para el prestador están limitadas, condicionadas o no aparecen en el contrato."
+            ],
+            "no_activar_si":[
+               "Las facultades de resolución para ambas partes son equivalentes o simétricas.",
+               "El prestador dispone de facultades claras ante incumplimientos del cliente."
+            ],
+            "impacto":{
+               "juridico":"Limitación práctica de la capacidad del prestador para resolver ante incumplimientos del cliente; refuerzo del desequilibrio contractual.",
+               "economico":"Dependencia de decisiones del cliente",
+               "operativo":"Menor capacidad de acción ante incumplimientos"
+            },
+            "severidad_base":"LOW"
+         }
+      ]
+   },
+   {
+      "bloque_contractual":"BLOQUE 13 · FUERZA MAYOR",
+      "riesgos":[
+         {
+            "id_chunk":"13.1",
+            "descripcion_riesgo":"Penalizaciones sin exclusión expresa de aplicación en casos de fuerza mayor.",
+            "criterios_activacion":[
+               "El contrato contiene una cláusula de penalización.",
+               "La cláusula no menciona expresamente la exclusión de fuerza mayor o causas no imputables."
+            ],
+            "no_activar_si":[
+               "La cláusula excluye explícitamente penalizaciones en supuestos de fuerza mayor.",
+               "El contrato regula consecuencias diferenciadas para eventos no imputables."
+            ],
+            "impacto":{
+               "juridico":"Posibilidad de aplicación de penalizaciones incluso cuando el incumplimiento se debe a causas externas e inevitables.",
+               "economico":"Posibles sanciones económicas injustificadas",
+               "operativo":null
+            },
+            "severidad_base":"MID"
+         },
+         {
+            "id_chunk":"13.2",
+            "descripcion_riesgo":"Supresión contractual, directa o indirecta, de la exoneración de responsabilidad por fuerza mayor.",
+            "criterios_activacion":[
+               "El contrato establece responsabilidad incluso en supuestos de fuerza mayor.",
+               "O bien contiene una definición de fuerza mayor tan restrictiva que impide su aplicación práctica.",
+               "O permite consecuencias contractuales aun cuando exista imposibilidad absoluta de cumplimiento."
+            ],
+            "no_activar_si":[
+               "La exoneración por fuerza mayor está reconocida sin limitaciones funcionales.",
+               "La definición contractual permite aplicar el concepto en situaciones objetivamente inevitables."
+            ],
+            "impacto":{
+               "juridico":"Asunción de responsabilidad por eventos imprevisibles e inevitables; neutralización del instituto de fuerza mayor; traslado íntegro del riesgo extraordinario al prestador.",
+               "economico":"Riesgo de costes y penalizaciones por eventos inevitables",
+               "operativo":"Necesidad de gestionar consecuencias sin posibilidad de exoneración"
+            },
+            "severidad_base":"HIGH"
+         },
+         {
+            "id_chunk":"13.3",
+            "descripcion_riesgo":"Ausencia de previsión de suspensión o reanudación de plazos durante fuerza mayor.",
+            "criterios_activacion":[
+               "El contrato reconoce la fuerza mayor.",
+               "No suspende plazos, ni regula la reanudación, ni establece efectos temporales sobre obligaciones durante el período de fuerza mayor."
+            ],
+            "no_activar_si":[
+               "El contrato prevé suspensión total o parcial de plazos.",
+               "Se regula la reanudación o ampliación tras el evento."
+            ],
+            "impacto":{
+               "juridico":"Riesgo de incumplimiento automático por cómputo continuo de plazos durante imposibilidad objetiva de ejecución.",
+               "economico":null,
+               "operativo":"Riesgo de interrupción y penalización por retraso involuntario"
+            },
+            "severidad_base":"MID"
+         },
+         {
+            "id_chunk":"13.4",
+            "descripcion_riesgo":"Exigencia de notificar fuerza mayor en plazo inferior a 48 horas bajo pena de pérdida del derecho.",
+            "criterios_activacion":[
+               "Existe una cláusula de notificación de fuerza mayor.",
+               "El plazo de notificación exigido es inferior a 48 horas.",
+               "La falta de notificación en ese plazo implica pérdida del derecho a invocar fuerza mayor."
+            ],
+            "no_activar_si":[
+               "El plazo es igual o superior a 48 horas.",
+               "No se vincula la pérdida del derecho al incumplimiento del plazo."
+            ],
+            "impacto":{
+               "juridico":"Riesgo de pérdida del derecho a invocar fuerza mayor por imposibilidad de notificación a tiempo.",
+               "economico":null,
+               "operativo":"Limitación para notificar en eventos disruptivos"
+            },
+            "severidad_base":"LOW"
+         },
+         {
+            "id_chunk":"13.5",
+            "descripcion_riesgo":"Exigencia de acreditar fuerza mayor mediante certificaciones oficiales o peritajes.",
+            "criterios_activacion":[
+               "El contrato exige certificados oficiales, informes periciales o acreditación por autoridad competente como único medio para invocar fuerza mayor."
+            ],
+            "no_activar_si":[
+               "El contrato permite acreditar la fuerza mayor mediante pruebas razonables alternativas."
+            ],
+            "impacto":{
+               "juridico":"Necesidad de obtener documentación oficial para justificar fuerza mayor; riesgo de imposibilidad de acreditación si no existe certificación disponible.",
+               "economico":null,
+               "operativo":"Carga administrativa y retraso en cumplimiento de obligaciones"
+            },
+            "severidad_base":"LOW"
+         },
+         {
+            "id_chunk":"13.6",
+            "descripcion_riesgo":"Ausencia de regulación del tratamiento económico durante período de fuerza mayor.",
+            "criterios_activacion":[
+               "El contrato reconoce la fuerza mayor.",
+               "No regula quién asume los costes durante la paralización.",
+               "No prevé compensación, exención temporal o criterios de liquidación económica."
+            ],
+            "no_activar_si":[
+               "El contrato asigna claramente los costes durante la fuerza mayor.",
+               "Se regula compensación, exención o distribución económica del impacto."
+            ],
+            "impacto":{
+               "juridico":"Incertidumbre sobre asunción de costes fijos y tratamiento económico durante el evento de fuerza mayor.",
+               "economico":"Riesgo de asumir costes no previstos",
+               "operativo":"Planificación financiera afectada"
+            },
+            "severidad_base":"LOW"
+         }
+      ]
+   },
+   {
+      "bloque_contractual":"BLOQUE 14 · LEGISLACIÓN Y JURISDICCIÓN",
+      "riesgos":[
+         {
+            "id_chunk":"14.1",
+            "descripcion_riesgo":"Cláusula de sumisión expresa ambigua sin determinación clara del fuero territorial.",
+            "criterios_activacion":[
+               "Existe una cláusula de sumisión expresa.",
+               "El texto incluye fórmulas genéricas o indeterminadas tales como ""tribunales del demandado"", ""fuero del cliente"" o referencias múltiples sin precisar órgano jurisdiccional concreto.",
+               "No es posible identificar un tribunal territorial específico a partir del texto contractual."
+            ],
+            "no_activar_si":[
+               "El contrato identifica claramente un órgano jurisdiccional concreto.",
+               "Existen referencias múltiples, pero todas coinciden territorialmente y permiten identificar un fuero inequívoco."
+            ],
+            "impacto":{
+               "juridico":"Incertidumbre sobre el tribunal competente en caso de litigio.",
+               "economico":"Incremento de costes legales por disputas de competencia",
+               "operativo":"Retrasos en resolución de controversias"
+            },
+            "severidad_base":"MID"
+         }
+      ]
+   }
+]
