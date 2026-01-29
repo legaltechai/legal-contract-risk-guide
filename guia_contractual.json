@@ -139,7 +139,7 @@
             "id_chunk":"2.3",
             "descripcion_riesgo":"Descripción del objeto en términos excesivamente generales, sin delimitar tareas, metodología o finalidad concreta.",
             "criterios_activacion":[
-               "La cláusula utiliza términos genéricos o amplios (ej.: ""servicios de consultoría"", ""asistencia técnica"", ""soporte"").",
+               "La cláusula utiliza términos genéricos o amplios (ej.: 'servicios de consultoría', 'asistencia técnica', 'soporte').",
                "No aparecen tareas, metodología, limitaciones, entregables o finalidad concreta en ningún punto del objeto."
             ],
             "no_activar_si":[
@@ -176,7 +176,7 @@
             "id_chunk":"2.5",
             "descripcion_riesgo":"Objeto definitivo sujeto a replanteo o validación posterior del cliente, sin plazo ni determinación concreta.",
             "criterios_activacion":[
-               "La cláusula contiene referencias a unidades, volúmenes, entregables o alcance marcados como ""estimados"", ""a determinar"" o equivalentes.",
+               "La cláusula contiene referencias a unidades, volúmenes, entregables o alcance marcados como  'estimados', 'a determinar' o equivalentes.",
                "No se establece ningún plazo, hito, condición o procedimiento para su validación definitiva por el cliente."
             ],
             "no_activar_si":[
@@ -195,7 +195,7 @@
             "descripcion_riesgo":"Ausencia de especificación precisa del lugar donde se ejecutará la prestación del servicio.",
             "criterios_activacion":[
                "La cláusula de lugar de prestación no incluye dirección concreta, instalación específica o localización inequívoca.",
-               "El texto se limita a referencias genéricas como ""en las instalaciones del cliente"", municipio o zona geográfica sin precisiones."
+               "El texto se limita a referencias genéricas como 'en las instalaciones del cliente', municipio o zona geográfica sin precisiones."
             ],
             "no_activar_si":[
                "La ubicación detallada aparece en otro apartado del contrato o en un anexo incorporado.",
@@ -217,7 +217,7 @@
             "id_chunk":"3.1",
             "descripcion_riesgo":"Obligación contractual de realizar trabajos no especificados bajo conceptos genéricos.",
             "criterios_activacion":[
-               "La cláusula incluye expresiones abiertas como ""cuantas actuaciones sean necesarias"", ""trabajos para el buen fin"", o equivalentes.",
+               "La cláusula incluye expresiones abiertas como 'cuantas actuaciones sean necesarias', 'trabajos para el buen fin', o equivalentes.",
                "No se describen tareas concretas, entregables o límites del alcance.",
                "No aparece regulación de remuneración adicional asociada a dichos trabajos indeterminados."
             ],
@@ -564,9 +564,9 @@
          },
          {
             "id_chunk":"5.6",
-            "descripcion_riesgo":"Calificación contractual del precio o unidades como ""orientativos"" sin límites de variación.",
+            "descripcion_riesgo":"Calificación contractual del precio o unidades como 'orientativos' sin límites de variación.",
             "criterios_activacion":[
-               "El contrato califica precio o unidades como ""orientativos"", ""estimados"" o equivalentes.",
+               "El contrato califica precio o unidades como 'orientativos', 'estimados' o equivalentes.",
                "No se fijan límites porcentuales, cuantitativos o criterios objetivos de variación.",
                "No consta carácter vinculante o mínimo garantizado."
             ],
@@ -583,9 +583,9 @@
          },
          {
             "id_chunk":"5.7",
-            "descripcion_riesgo":"Modalidad de precio ""a justificar"" sin establecer precio máximo garantizado.",
+            "descripcion_riesgo":"Modalidad de precio 'a justificar' sin establecer precio máximo garantizado.",
             "criterios_activacion":[
-               "El precio se determina en modalidad ""a justificar"" (costes o costes + margen).",
+               "El precio se determina en modalidad 'a justificar' (costes o costes + margen).",
                "No se establece un precio máximo garantizado.",
                "No se definen los tipos de costes admisibles.",
                "No se regula procedimiento de aprobación de dichos costes."
@@ -1169,7 +1169,7 @@
             "descripcion_riesgo":"Obligación de confidencialidad sin definición de qué información se considera confidencial.",
             "criterios_activacion":[
                "La cláusula de confidencialidad no identifica ningún tipo de información (ni técnica, ni científica, ni comercial, ni financiera, ni equivalente).",
-               "La cláusula se limita a fórmulas genéricas como ""toda información"", ""cualquier dato"", ""información de cualquier tipo"" u otras similares sin delimitación material mínima.",
+               "La cláusula se limita a fórmulas genéricas como 'toda información', 'cualquier dato', 'información de cualquier tipo' u otras similares sin delimitación material mínima.",
                "El texto contractual no permite determinar objetivamente qué información queda protegida (ausencia total de criterios materiales, de origen o de contexto)."
             ],
             "no_activar_si":[
@@ -1192,7 +1192,7 @@
                "No se especifican medidas de protección mínimas, estándares aplicables o referencias funcionales a protocolos de seguridad."
             ],
             "no_activar_si":[
-               "Se mencionan estándares mínimos (p. ej., ""medidas razonables"", ""medidas equivalentes a las aplicadas internamente"", normas técnicas, etc.).",
+               "Se mencionan estándares mínimos (p. ej.,'medidas razonables', 'medidas equivalentes a las aplicadas internamente', normas técnicas, etc.).",
                "La cláusula remite a políticas o procedimientos existentes que definan medidas de protección."
             ],
             "impacto":{
@@ -1268,7 +1268,7 @@
             "descripcion_riesgo":"Establecimiento de penalizaciones por supuestos jurídicamente indeterminados.",
             "criterios_activacion":[
                "La cláusula de penalización existe en el contrato.",
-               "Las penalizaciones se aplican a conceptos genéricos como ""incumplimiento parcial"", ""cumplimiento defectuoso"", ""calidad insatisfactoria"" u otros equivalentes sin definición objetiva.",
+               "Las penalizaciones se aplican a conceptos genéricos como 'incumplimiento parcial', 'cumplimiento defectuoso', 'calidad insatisfactoria' u otros equivalentes sin definición objetiva.",
                "No existen criterios objetivos, verificables o medibles que determinen cuándo se aplican dichas penalizaciones."
             ],
             "no_activar_si":[
@@ -1422,7 +1422,7 @@
             "descripcion_riesgo":"Causas de resolución formuladas mediante conceptos jurídicos indeterminados o cláusulas abiertas.",
             "criterios_activacion":[
                "Existe una cláusula de resolución anticipada en el contrato.",
-               "Las causas de resolución se formulan mediante expresiones genéricas como ""incumplimiento de obligación principal"", ""cumplimiento defectuoso"", ""falta de calidad"", ""mal servicio"" o expresiones abiertas como ""cuando lo considere necesario"".",
+               "Las causas de resolución se formulan mediante expresiones genéricas como 'incumplimiento de obligación principal', 'cumplimiento defectuoso', 'falta de calidad', 'mal servicio' o expresiones abiertas como 'cuando lo considere necesario'.",
                "No existe referencia a obligaciones concretas ni criterios objetivos, verificables y medibles que permitan determinar la concurrencia de la causa."
             ],
             "no_activar_si":[
@@ -1636,7 +1636,7 @@
             "descripcion_riesgo":"Cláusula de sumisión expresa ambigua sin determinación clara del fuero territorial.",
             "criterios_activacion":[
                "Existe una cláusula de sumisión expresa.",
-               "El texto incluye fórmulas genéricas o indeterminadas tales como ""tribunales del demandado"", ""fuero del cliente"" o referencias múltiples sin precisar órgano jurisdiccional concreto.",
+               "El texto incluye fórmulas genéricas o indeterminadas tales como 'tribunales del demandado', 'fuero del cliente' o referencias múltiples sin precisar órgano jurisdiccional concreto.",
                "No es posible identificar un tribunal territorial específico a partir del texto contractual."
             ],
             "no_activar_si":[
